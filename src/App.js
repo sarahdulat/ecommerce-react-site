@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { commerce } from "./lib/Commerce.js";
+import { commerce } from "./lib/Commerce";
 import ProductList from "./components/ProductList";
 import "./styles/style.scss";
 

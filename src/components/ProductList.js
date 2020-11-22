@@ -1,5 +1,5 @@
 import React from "react";
-import ProductItem from "./ProductItem.js";
+import ProductItem from "./ProductItem";
 
 const ProductsList = ({ products, onAddToCart }) => {
   return (
