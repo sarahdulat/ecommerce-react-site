@@ -1,11 +1,15 @@
 import React from "react";
 import ProductItem from "./ProductItem.js";
 
-const ProductsList = ({ products }) => {
+const ProductsList = ({ products, onAddToCart }) => {
   return (
     <div className="products">
       {products.map((product) => (
-        <ProductItem key={product.id} product={product} />
+        <ProductItem
+          key={product.id}
+          product={product}
+          onAddToCart={onAddToCart}
+        />
       ))}
     </div>
   );

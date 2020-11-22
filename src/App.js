@@ -34,9 +34,20 @@ const App = () => {
       });
   };
 
+  const handleAddToCart = (productId, quantity) => {
+    commerce.cart
+      .add(productId, quantity)
+      .then((item) => {
+        setCart(item.cart);
+      })
+      .catch((error) => {
+        console.log("There was an error adding the item to the cart.", error);
+      });
+  };
+
   return (
     <div className="app">
-      <ProductList products={products} />
+      <ProductList products={products} onAddToCart={handleAddToCart} />
     </div>
   );
 };
