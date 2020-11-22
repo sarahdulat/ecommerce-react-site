@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/Commerce.js";
-import "./styles/scss/style.scss";
+import ProductList from "./components/ProductList";
+import "./styles/style.scss";
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({});
 
   useEffect(() => {
     fetchProducts();
+    fetchCart();
   }, []);
 
   const fetchProducts = () => {
@@ -20,7 +23,22 @@ const App = () => {
       });
   };
 
-  return <div classname="app"></div>;
+  const fetchCart = () => {
+    commerce.cart
+      .retrieve()
+      .then((cart) => {
+        setCart(cart);
+      })
+      .catch((error) => {
+        console.log("There was an error fetching the cart", error);
+      });
+  };
+
+  return (
+    <div className="app">
+      <ProductList products={products} />
+    </div>
+  );
 };
 
 export default App;
