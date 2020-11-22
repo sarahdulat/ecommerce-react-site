@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/Commerce.js";
 // import './style/scss/style.scss';
 
 const App = () => {
   const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const fetchProducts = () => {
     commerce.products
