@@ -5,6 +5,17 @@ import { commerce } from "./lib/Commerce.js";
 const App = () => {
   const [products, setProducts] = useState([]);
 
+  const fetchProducts = () => {
+    commerce.products
+      .list()
+      .then((products) => {
+        setProducts(products.data);
+      })
+      .catch((error) => {
+        console.log("There was an error.", error);
+      });
+  };
+
   return <div classname="app"></div>;
 };
 
