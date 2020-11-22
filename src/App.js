@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/Commerce.js";
-// import './style/scss/style.scss';
+import "./styles/scss/style.scss";
 
 const App = () => {
   const [products, setProducts] = useState([]);
