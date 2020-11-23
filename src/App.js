@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/Commerce";
 import ProductList from "./components/ProductList";
+import CartNav from "./components/CartNav";
 import "./styles/style.scss";
 
 const App = () => {
@@ -45,8 +46,23 @@ const App = () => {
       });
   };
 
+  const handleRemoveFromCart = (lineItemId) => {
+    commerce.cart
+      .remove(lineItemId)
+      .then((resp) => {
+        setCart(resp, cart);
+      })
+      .catch((error) => {
+        console.error(
+          "There was an error removing the item from the cart",
+          error
+        );
+      });
+  };
+
   return (
     <div className="app">
+      <CartNav cart={cart} onRemoveFromCart={handleRemoveFromCart} />
       <ProductList products={products} onAddToCart={handleAddToCart} />
     </div>
   );

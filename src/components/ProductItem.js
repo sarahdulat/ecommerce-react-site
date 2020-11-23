@@ -1,10 +1,10 @@
 import React from "react";
 
-const handleAddToCart = () => {
-  onAddToCart(product.id, 1);
-};
+const ProductItem = ({ product, onAddToCart }) => {
+  const handleAddToCart = () => {
+    onAddToCart(product.id, 1);
+  };
 
-const ProductItem = ({ product, handleAddToCart }) => {
   return (
     <div className="product">
       <img

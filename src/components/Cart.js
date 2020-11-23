@@ -2,7 +2,7 @@ import React from "react";
 import CartItem from "./CartItem";
 import PropTypes from "prop-types";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, onRemoveFromCart }) => {
   const renderEmptyMessage = () => {
     if (cart.total_unique_items > 0) {
       return;
@@ -15,16 +15,16 @@ const Cart = ({ cart }) => {
   };
   const renderItems = () =>
     cart.line_items.map((lineItem) => (
-      <CartItem item={lineItem} key={lineItem.id} classname="cart__inner" />
+      <CartItem item={lineItem} key={lineItem.id} className="cart__inner" />
     ));
   const renderTotal = () => (
     <div className="cart__total">
-      <p classname="cart__total-title">Subtotal: </p>
-      <p classname="cart__total-price">{cart.subtotal.formatted_with_symbol}</p>
+      <p className="cart__total-title">Subtotal: </p>
+      <p className="cart__total-price">{cart.subtotal.formatted_with_symbol}</p>
     </div>
   );
   return (
-    <div classname="cart">
+    <div className="cart">
       <h4 className="cart__heading">Your Shopping Cart</h4>
       {renderEmptyMessage()}
       {renderItems()}

@@ -12,7 +12,7 @@ const CartNav = ({ cart, onRemoveFromCart }) => {
   const renderOpenButton = () => (
     <button className="nav__cart-btn--open">
       <FontAwesomeIcon size="2x" icon="shopping-bag" color="#292B83" />
-      {cart != -null ? <span>{cart.total_items}</span> : ""}
+      {cart !== null ? <span>{cart.total_items}</span> : ""}
     </button>
   );
 
