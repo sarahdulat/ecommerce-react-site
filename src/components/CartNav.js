@@ -18,15 +18,19 @@ const CartNav = ({ cart, onRemoveFromCart }) => {
 
   const renderCloseButton = () => (
     <button className="nav__cart-bn--close">
-      <FontAwesomeIcon size="1x" icon="times" color="white" />
+      <FontAwesomeIcon size="2x" icon="times" color="white" />
     </button>
   );
 
   return (
     <div className="nav">
-      <div className="nav__cart" onClick={() => setCartVisible(!isCartVisible)}>
+      <h1 className="nav__header">Header</h1>
+      <span
+        className="nav__cart"
+        onClick={() => setCartVisible(!isCartVisible)}
+      >
         {!isCartVisible ? renderOpenButton() : renderCloseButton()}
-      </div>
+      </span>
       {isCartVisible && (
         <Cart cart={cart} onRemoveFromCart={onRemoveFromCart} />
       )}
