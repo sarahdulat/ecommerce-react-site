@@ -24,7 +24,7 @@ const CartNav = ({ cart, onRemoveFromCart }) => {
 
   return (
     <div className="nav">
-      <h1 className="nav__header">Header</h1>
+      <h1>Header</h1>
       <span
         className="nav__cart"
         onClick={() => setCartVisible(!isCartVisible)}
