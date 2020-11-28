@@ -29,8 +29,6 @@
       }
   
       &__details {
-          display: flex;
-          justify-content: space-between;
           margin-top: 0.75rem;
       }
   
@@ -40,17 +38,14 @@
           color: $text-grey;
       }
   
-  
       &__details {
-          display: flex;
-          justify-content: space-between;
+
       }
   
       &__btn {
           background: $color-accent;
           color: white;
           font-size: 0.5rem;
-          word-wrap: none;
           text-transform: uppercase;
           padding: 0.5rem 1rem;
           transition: all 0.3s ease-in-out;
@@ -62,7 +57,7 @@
           }
 
           @include sm {
-              margin-top: 0;
+              
           }
       }
   }
