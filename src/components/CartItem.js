@@ -18,7 +18,7 @@ const CartItem = ({ item, onRemoveFromCart }) => {
         <div className="cart-item__details-qty">
           <p>{item.quantity}</p>
         </div>
-        <div classname="cart-tem__details-price">
+        <div className="cart-tem__details-price">
           {item.line_total.formatted_with_symbol}
         </div>
       </div>

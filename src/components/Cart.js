@@ -1,6 +1,6 @@
 import React from "react";
 import CartItem from "./CartItem";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const Cart = ({ cart, onRemoveFromCart }) => {
   const renderEmptyMessage = () => {
@@ -15,7 +15,12 @@ const Cart = ({ cart, onRemoveFromCart }) => {
   };
   const renderItems = () =>
     cart.line_items.map((lineItem) => (
-      <CartItem item={lineItem} key={lineItem.id} className="cart__inner" />
+      <CartItem
+        item={lineItem}
+        key={lineItem.id}
+        className="cart__inner"
+        onRemoveFromCart={onRemoveFromCart}
+      />
     ));
   const renderTotal = () => (
     <div className="cart__total">
@@ -34,7 +39,7 @@ const Cart = ({ cart, onRemoveFromCart }) => {
 };
 
 Cart.propTypes = {
-  cart: propTypes.object
+  cart: PropTypes.object
 };
 
 export default Cart;
