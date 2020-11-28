@@ -9,7 +9,7 @@ const CartItem = ({ item, onRemoveFromCart }) => {
   return (
     <div className="cart-item">
       <img
-        classname="cart-item__image"
+        className="cart-item__image"
         src={item.media.source}
         alt={item.name}
       />

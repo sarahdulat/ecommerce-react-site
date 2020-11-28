@@ -1,6 +1,6 @@
 import React from "react";
 import CartItem from "./CartItem";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 const Cart = ({ cart, onRemoveFromCart }) => {
   const renderEmptyMessage = () => {
@@ -33,8 +33,8 @@ const Cart = ({ cart, onRemoveFromCart }) => {
   );
 };
 
-Cart.PropTypes = {
-  cart: PropTypes.object
+Cart.propTypes = {
+  cart: propTypes.object
 };
 
 export default Cart;
