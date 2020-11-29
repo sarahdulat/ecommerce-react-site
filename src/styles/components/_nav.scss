@@ -17,14 +17,14 @@ h1 {
     float: right;
     padding-right: 30px;
       span {
-          font-size: 14px;
-          font-style: bold;
-          background-color: $color-accent;
-          color: white;
-          padding: 0 0.25rem;
-          margin-left: -0.5rem;
-          border-radius: 50%;
-          vertical-align: top;
+        font-size: 14px;
+        font-style: bold;
+        background-color: $color-accent;
+        color: white;
+        padding: 0 0.25rem;
+        margin-left: -0.5rem;
+        border-radius: 50%;
+        vertical-align: top;
       }
   }
 
@@ -34,22 +34,22 @@ h1 {
       }
 
       &--close {
-          background-color: $color-accent;
-          padding: 0 0.25rem;
-          color: white;
-          margin-left: -1.6rem;
-          margin-top: -0.25rem;
-          border-radius: 50%;
-          vertical-align: top;
-          width: 2.25rem;
-          height: 2.25rem;
-          border: none;
-          z-index: 999;
-          position: absolute;
+        background-color: $color-accent;
+        padding: 0 0.25rem;
+        color: white;
+        margin-left: -0.6rem;
+        margin-top: -0.45rem;
+        border-radius: 50%;
+        vertical-align: top;
+        width: 2.25rem;
+        height: 2.25rem;
+        border: none;
+        z-index: 999;
+        position: absolute;
 
-          svg {
-              margin-top: 0;
-          }
+        svg {
+            margin-top: 0;
+        }
       }
   }
 }

@@ -1,7 +1,7 @@
 .cart {
   width: 350px;
   background-color: white;
-  border: 2px solid $text-primary;
+  border: 1px solid $text-primary;
   display: fixed;
   z-index: 1;
   top: 1.25rem;
@@ -12,7 +12,7 @@
   &__heading {
       padding: 0.95rem 1rem;
       font-weight: bold;
-      border-bottom: 2px solid $text-primary;
+      border-bottom: 1px solid $text-primary;
       color: $text-primary;
       font-size: 1.25rem;
   }
@@ -23,8 +23,8 @@
 
   &__total {
       display: flex;
-      padding: 1rem 1.25rem 0;
-      border-top: 2px solid $text-primary;
+      padding: 1rem 1rem 0;
+      border-top: 1px solid $text-primary;
       justify-content: space-between;
       font-weight: bold;
   }
@@ -47,7 +47,7 @@
   &__btn-empty {
       align-self: flex-start;
       background-color: white;
-      border: 2px solid $text-primary;
+      border: 1px solid $text-primary;
       padding-left: 1.25rem;
       padding: 0.5rem 0.75rem;
       margin: 0 1.25rem 1.25rem;
@@ -57,16 +57,20 @@
       font-size: 0.75rem;
   }
 
+  &__checkout {
+      display: flex;
+  }
+
   &__btn-checkout {
-      background-color: $text-primary;
-      border: 2px solid $text-primary;
-      padding-left: 1.25rem;
+      background-color: $color-accent;
+      border: 0;
       padding: 0.5rem 0.75rem;
-      margin: 0 1.25rem 1.25rem;
+      margin: 0.75rem 0.75rem 0.75rem auto;
       text-transform: uppercase;
       color: white;
       font-weight: bold;
       font-size: 0.75rem;
+      justify-content: flex-end;
 
       &:hover {
           background-color: lighten(#292B83, 10);
@@ -121,7 +125,7 @@
       &__remove {
           padding: 0;
           margin: 0 0 0 1rem;
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           color: $text-primary;
           border: 0;
       }

@@ -28,12 +28,20 @@ const Cart = ({ cart, onRemoveFromCart }) => {
       <p className="cart__total-price">{cart.subtotal.formatted_with_symbol}</p>
     </div>
   );
+  const renderCheckout = () => (
+    <div className="cart__checkout">
+      <button name="Checkout" className="cart__btn-checkout">
+        Checkout
+      </button>
+    </div>
+  );
   return (
     <div className="cart">
-      <h4 className="cart__heading">Your Shopping Cart</h4>
+      <h4 className="cart__heading">Shopping Cart</h4>
       {renderEmptyMessage()}
       {renderItems()}
       {renderTotal()}
+      {renderCheckout()}
     </div>
   );
 };
