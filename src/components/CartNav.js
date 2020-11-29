@@ -17,7 +17,7 @@ const CartNav = ({ cart, onRemoveFromCart }) => {
   );
 
   const renderCloseButton = () => (
-    <button className="nav__cart-bn--close">
+    <button className="nav__cart-btn--close">
       <FontAwesomeIcon size="2x" icon="times" color="white" />
     </button>
   );
