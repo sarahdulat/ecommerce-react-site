@@ -75,7 +75,7 @@
 
   .cart-item {
       display: flex;
-      padding: 1.25rem;
+      padding: 0 1.25rem 1.25rem 1.25rem;
   
       &__image {
           width: 4rem;
@@ -83,13 +83,14 @@
           object-fit: cover;
           border: 2px solid $color-accent;
           margin-right: 0.75rem;
+          align-self: center;
       }
 
       &__details-name {
           font-size: 0.98rem;
           color: $text-primary;
           font-weight: bold;
-          margin-bottom: 0.25rem;
+          margin-bottom: 0;
       }
 
       &__details-qty {
@@ -122,9 +123,8 @@
           text-transform: uppercase; 
           color: $text-primary;
           font-weight: bold;
-          margin-left: auto;
-          margin-top: 10px 0;
-          align-self: flex-start;
+          margin: 0 0 0 auto;
+          align-self: center;
       }
   }
 }
