@@ -2,9 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTrash,
+  faMinusCircle,
+  faPlusCircle
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faTrash);
+library.add(faTrash, faMinusCircle, faPlusCircle);
 
 const CartItem = ({ item, onRemoveFromCart }) => {
   const handleRemoveFromCart = () => {
@@ -21,18 +25,32 @@ const CartItem = ({ item, onRemoveFromCart }) => {
       <div className="cart-item__details">
         <h4 className="cart-item__details-name">{item.name}</h4>
         <div className="cart-item__details-qty">
-          <p>x {item.quantity}</p>
+          <button
+            type="button"
+            className="cart-item__quantity-btn"
+            onClick={handleRemoveFromCart}
+          >
+            <FontAwesomeIcon size="1x" icon="minus-circle" />
+          </button>
+          <p>{item.quantity}</p>
+          <button
+            type="button"
+            className="cart-item__quantity-btn"
+            onClick={handleRemoveFromCart}
+          >
+            <FontAwesomeIcon size="1x" icon="plus-circle" />
+          </button>
         </div>
-      </div>
-      <div className="cart-item__details-price">
-        {item.line_total.formatted_with_symbol}
         <button
           type="button"
           className="cart-item__remove"
           onClick={handleRemoveFromCart}
         >
-          <FontAwesomeIcon size="1x" icon="trash" color="#292B83" />
+          <FontAwesomeIcon size="1x" icon="trash" />
         </button>
+      </div>
+      <div className="cart-item__details-price">
+        {item.line_total.formatted_with_symbol}
       </div>
     </div>
   );
