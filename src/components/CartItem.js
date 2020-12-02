@@ -10,9 +10,15 @@ import {
 
 library.add(faTrash, faMinusCircle, faPlusCircle);
 
-const CartItem = ({ item, onRemoveFromCart }) => {
+const CartItem = ({ item, onRemoveFromCart, onAddToCart }) => {
   const handleRemoveFromCart = () => {
     onRemoveFromCart(item.id);
+  };
+  const handleIncreaseQuantity = () => {
+    onAddToCart(item.id, 1);
+  };
+  const handleDecreaseQuantity = () => {
+    onAddToCart(item.id, -1);
   };
 
   return (
@@ -28,7 +34,7 @@ const CartItem = ({ item, onRemoveFromCart }) => {
           <button
             type="button"
             className="cart-item__quantity-btn"
-            onClick={handleRemoveFromCart}
+            onClick={handleDecreaseQuantity}
           >
             <FontAwesomeIcon size="1x" icon="minus-circle" />
           </button>
@@ -36,7 +42,7 @@ const CartItem = ({ item, onRemoveFromCart }) => {
           <button
             type="button"
             className="cart-item__quantity-btn"
-            onClick={handleRemoveFromCart}
+            onClick={handleIncreaseQuantity}
           >
             <FontAwesomeIcon size="1x" icon="plus-circle" />
           </button>

@@ -2,7 +2,7 @@ import React from "react";
 import CartItem from "./CartItem";
 import PropTypes from "prop-types";
 
-const Cart = ({ cart, onRemoveFromCart }) => {
+const Cart = ({ cart, onRemoveFromCart, onAddToCart }) => {
   const renderEmptyMessage = () => {
     if (cart.total_unique_items > 0) {
       return;
@@ -20,6 +20,7 @@ const Cart = ({ cart, onRemoveFromCart }) => {
         key={lineItem.id}
         className="cart__inner"
         onRemoveFromCart={onRemoveFromCart}
+        onAddToCart={onAddToCart}
       />
     ));
   const renderTotal = () => (

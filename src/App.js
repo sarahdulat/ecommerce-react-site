@@ -62,7 +62,11 @@ const App = () => {
 
   return (
     <div className="app">
-      <CartNav cart={cart} onRemoveFromCart={handleRemoveFromCart} />
+      <CartNav
+        cart={cart}
+        onRemoveFromCart={handleRemoveFromCart}
+        onAddToCart={handleAddToCart}
+      />
       <ProductList products={products} onAddToCart={handleAddToCart} />
     </div>
   );
