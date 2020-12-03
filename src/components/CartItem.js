@@ -10,15 +10,15 @@ import {
 
 library.add(faTrash, faMinusCircle, faPlusCircle);
 
-const CartItem = ({ item, onRemoveFromCart, onAddToCart }) => {
+const CartItem = ({ item, onRemoveFromCart, onCartUpdate }) => {
   const handleRemoveFromCart = () => {
     onRemoveFromCart(item.id);
   };
   const handleIncreaseQuantity = () => {
-    onAddToCart(item.id, 1);
+    onCartUpdate(item.id, item.quantity + 1);
   };
   const handleDecreaseQuantity = () => {
-    onAddToCart(item.id, -1);
+    onCartUpdate(item.id, item.quantity - 1);
   };
 
   return (

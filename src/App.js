@@ -46,6 +46,18 @@ const App = () => {
       });
   };
 
+  const handleUpdateCart = (lineItemId, quantity) => {
+    console.log(quantity);
+    commerce.cart
+      .update(lineItemId, quantity)
+      .then((item) => {
+        setCart(item.quantity);
+      })
+      .catch((error) => {
+        console.log("There was an error updating the item in the cart.", error);
+      });
+  };
+
   const handleRemoveFromCart = (lineItemId) => {
     commerce.cart
       .remove(lineItemId)
@@ -65,7 +77,7 @@ const App = () => {
       <CartNav
         cart={cart}
         onRemoveFromCart={handleRemoveFromCart}
-        onAddToCart={handleAddToCart}
+        onCartUpdate={handleUpdateCart}
       />
       <ProductList products={products} onAddToCart={handleAddToCart} />
     </div>

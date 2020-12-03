@@ -6,7 +6,7 @@ import { faShoppingBag, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faShoppingBag, faTimes);
 
-const CartNav = ({ cart, onRemoveFromCart, onAddToCart }) => {
+const CartNav = ({ cart, onRemoveFromCart, onCartUpdate }) => {
   const [isCartVisible, setCartVisible] = useState(false);
 
   const renderOpenButton = () => (
@@ -35,7 +35,7 @@ const CartNav = ({ cart, onRemoveFromCart, onAddToCart }) => {
         <Cart
           cart={cart}
           onRemoveFromCart={onRemoveFromCart}
-          onAddToCart={onAddToCart}
+          onCartUpdate={onCartUpdate}
         />
       )}
     </div>
