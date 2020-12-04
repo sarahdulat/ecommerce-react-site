@@ -8,9 +8,7 @@ const Cart = ({ cart, onRemoveFromCart, onCartUpdate }) => {
       return;
     }
     return (
-      <p className="cart__none">
-        You have no items in your shopping cart, start adding some!
-      </p>
+      <p className="cart__none">You have no items in your shopping cart.</p>
     );
   };
   const renderItems = () =>
